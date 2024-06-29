@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxwixkvlpyofx"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_i6k27"]
-[ext_resource type="Script" path="res://Gimble.gd" id="2_1n2ny"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_i6k27"]
+[ext_resource type="Script" path="res://Scripts/Gimble.gd" id="2_1n2ny"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_o4l6r"]
 

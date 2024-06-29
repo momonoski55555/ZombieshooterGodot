@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnciktouqq4mt"]
 
-[ext_resource type="Script" path="res://extection_point.gd" id="1_dqb2s"]
+[ext_resource type="Script" path="res://Scripts/extection_point.gd" id="1_dqb2s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_agc30"]
 
