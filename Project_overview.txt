@@ -1,0 +1,4 @@
+# Goals
+making an FPS extraction zombie in 7 days
+know the ins and out of the engine
+

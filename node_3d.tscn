@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxg3cxn1hwci8"]
+
+[ext_resource type="Texture2D" uid="uid://wlksn2etjgnx" path="res://gridbox-prototype-materials-main/gridbox-prototype-materials-main/prototype_512x512_grey4.png" id="1_36uty"]
+[ext_resource type="PackedScene" uid="uid://dxwixkvlpyofx" path="res://Players.tscn" id="1_dmp3y"]
+
+[sub_resource type="Environment" id="Environment_qbc2x"]
+ambient_light_source = 3
+reflected_light_source = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il0rx"]
+albedo_texture = ExtResource("1_36uty")
+uv1_scale = Vector3(5.855, 5.855, 5.855)
+uv1_offset = Vector3(-0.23, 0, 0)
+uv2_scale = Vector3(0.945, 0.945, 0.945)
+uv2_triplanar_sharpness = 1.1487
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qbc2x")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08302, 4.02498, 0.117234)
+light_energy = 16.0
+light_indirect_energy = 5.935
+light_volumetric_fog_energy = 0.0
+omni_range = 141.915
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1.00051, 0, 0, 0, 2.86705, 0, 0, 0, 1.00051, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_il0rx")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(70.8044, 0, 0, 0, 14.8827, 0, 0, 0, 87.7639, 0, 6.18187, 0.00390625)
+flip_faces = true
+size = Vector3(1, 1, 0.992188)
+
+[node name="Player" parent="." instance=ExtResource("1_dmp3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34224, 4.5, -0.44821)
