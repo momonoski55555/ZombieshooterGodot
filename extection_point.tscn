@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnciktouqq4mt"]
+
+[ext_resource type="Script" path="res://extection_point.gd" id="1_dqb2s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_agc30"]
+
+[node name="Extection_Point" type="Area3D"]
+script = ExtResource("1_dqb2s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(5.30753, 0, 0, 0, 5.30753, 0, 0, 0, 5.30753, 0, 0, 0)
+shape = SubResource("BoxShape3D_agc30")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

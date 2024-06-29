@@ -5,7 +5,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_o4l6r"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Players"]]
 script = ExtResource("1_i6k27")
 
 [node name="Gimble" type="Node3D" parent="."]
@@ -15,5 +15,5 @@ Sens = 0.639
 
 [node name="Camera3D" type="Camera3D" parent="Gimble"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Players"]]
 shape = SubResource("CylinderShape3D_o4l6r")

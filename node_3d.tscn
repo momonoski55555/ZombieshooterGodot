@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxg3cxn1hwci8"]
+[gd_scene load_steps=8 format=3 uid="uid://cxg3cxn1hwci8"]
 
-[ext_resource type="Texture2D" uid="uid://wlksn2etjgnx" path="res://gridbox-prototype-materials-main/gridbox-prototype-materials-main/prototype_512x512_grey4.png" id="1_36uty"]
+[ext_resource type="Texture2D" uid="uid://wlksn2etjgnx" path="res://gridbox-prototype-materials-main (2)/prototype_512x512_grey4.png" id="1_36uty"]
 [ext_resource type="PackedScene" uid="uid://dxwixkvlpyofx" path="res://Players.tscn" id="1_dmp3y"]
+[ext_resource type="PackedScene" uid="uid://dnciktouqq4mt" path="res://extection_point.tscn" id="3_ekt2v"]
 
 [sub_resource type="Environment" id="Environment_qbc2x"]
 ambient_light_source = 3
@@ -13,6 +14,14 @@ uv1_scale = Vector3(5.855, 5.855, 5.855)
 uv1_offset = Vector3(-0.23, 0, 0)
 uv2_scale = Vector3(0.945, 0.945, 0.945)
 uv2_triplanar_sharpness = 1.1487
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kc2dh"]
+transparency = 1
+albedo_color = Color(0.968627, 0.454902, 0.596078, 0.262745)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pbcir"]
+material = SubResource("StandardMaterial3D_kc2dh")
+size = Vector3(5.84, 5.91, 6.105)
 
 [node name="Node3D" type="Node3D"]
 
@@ -38,3 +47,11 @@ size = Vector3(1, 1, 0.992188)
 
 [node name="Player" parent="." instance=ExtResource("1_dmp3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34224, 4.5, -0.44821)
+
+[node name="Extection_Point" parent="." instance=ExtResource("3_ekt2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5276, -1.34335, 1.70044)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Extection_Point"]
+mesh = SubResource("BoxMesh_pbcir")
+
+[editable path="Extection_Point"]
