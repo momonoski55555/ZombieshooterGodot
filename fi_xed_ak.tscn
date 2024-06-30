@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b14im4efavm2a"]
+
+[ext_resource type="PackedScene" uid="uid://cucujune4lq83" path="res://FiXEDAk.glb" id="1_of0s6"]
+
+[node name="FiXEDAk" instance=ExtResource("1_of0s6")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(-0.494395, 0.494395, -0.505542, 0.505543)
+bones/3/position = Vector3(-0.0313538, -0.933642, -2.51558)
+bones/3/rotation = Quaternion(-0.510954, -0.625839, 0.329128, 0.488801)
+
+[node name="Cube_002" parent="Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.316977, -6.61289e-08, 7.54371e-08, 5.75081e-08, 0.316977, -4.59603e-08, -6.56582e-08, 1.91039e-08, 0.316977, 2.38419e-07, -1.00583e-07, 1.17494e-07)

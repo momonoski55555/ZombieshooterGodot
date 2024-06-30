@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxg3cxn1hwci8"]
+[gd_scene load_steps=6 format=3 uid="uid://cxg3cxn1hwci8"]
 
 [ext_resource type="Texture2D" uid="uid://wlksn2etjgnx" path="res://gridbox-prototype-materials-main (2)/prototype_512x512_grey4.png" id="1_cbr8h"]
 [ext_resource type="PackedScene" uid="uid://dxwixkvlpyofx" path="res://Prefabs/Players.tscn" id="2_jk3vx"]
@@ -14,14 +14,6 @@ uv1_scale = Vector3(5.855, 5.855, 5.855)
 uv1_offset = Vector3(-0.23, 0, 0)
 uv2_scale = Vector3(0.945, 0.945, 0.945)
 uv2_triplanar_sharpness = 1.1487
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kc2dh"]
-transparency = 1
-albedo_color = Color(0.968627, 0.454902, 0.596078, 0.262745)
-
-[sub_resource type="BoxMesh" id="BoxMesh_pbcir"]
-material = SubResource("StandardMaterial3D_kc2dh")
-size = Vector3(5.84, 5.91, 6.105)
 
 [node name="Node3D" type="Node3D"]
 
@@ -50,8 +42,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34224, 4.5, -0.44821)
 
 [node name="Extection_Point" parent="." instance=ExtResource("3_jw015")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5276, -1.34335, 1.70044)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Extection_Point"]
-mesh = SubResource("BoxMesh_pbcir")
 
 [editable path="Extection_Point"]

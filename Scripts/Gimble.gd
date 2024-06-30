@@ -1,6 +1,7 @@
 extends Node3D
 
 @export_range(0.0 , 1.0 ) var Sens: float
+var previous_position:  Vector3
 
 
 func _ready():
@@ -13,3 +14,6 @@ func  _input(event):
 		$Camera3D.rotation.x = clamp($Camera3D.rotation.x , deg_to_rad(-89), deg_to_rad(89))
 		
 	
+
+func _process(delta):
+	pass
