@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxg3cxn1hwci8"]
+[gd_scene load_steps=7 format=3 uid="uid://cxg3cxn1hwci8"]
 
 [ext_resource type="Texture2D" uid="uid://wlksn2etjgnx" path="res://gridbox Texture/prototype_512x512_grey4.png" id="1_cbr8h"]
 [ext_resource type="PackedScene" uid="uid://dxwixkvlpyofx" path="res://Prefabs/Players.tscn" id="2_jk3vx"]
 
-[sub_resource type="Environment" id="Environment_qbc2x"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g4iqa"]
+
+[sub_resource type="Sky" id="Sky_nmibu"]
+sky_material = SubResource("ProceduralSkyMaterial_g4iqa")
+
+[sub_resource type="Environment" id="Environment_h2cwd"]
+background_mode = 2
+sky = SubResource("Sky_nmibu")
 ambient_light_source = 3
 reflected_light_source = 2
 
@@ -17,14 +24,13 @@ uv2_triplanar_sharpness = 1.1487
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_qbc2x")
+environment = SubResource("Environment_h2cwd")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08302, 4.02498, 0.117234)
-light_energy = 16.0
+[node name="OmniLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.141902, -0.95751, 0.251076, -0.23305, 0.214197, 0.948582, -0.962056, -0.193119, -0.192753, -1.08302, 4.02498, 0.117234)
+light_energy = 2.635
 light_indirect_energy = 5.935
 light_volumetric_fog_energy = 0.0
-omni_range = 141.915
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1.00051, 0, 0, 0, 2.86705, 0, 0, 0, 1.00051, 0, 0, 0)
@@ -32,9 +38,16 @@ material_override = SubResource("StandardMaterial3D_il0rx")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(70.8044, 0, 0, 0, 14.8827, 0, 0, 0, 87.7639, 0, 6.18187, 0.00390625)
+transform = Transform3D(48.9881, 0, 0, 0, -0.593106, 0, 0, 0, 47.6558, 0, 0.678249, 0)
 flip_faces = true
-size = Vector3(1, 1, 0.992188)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(20.8445, -0.415971, 0, 3.07359, 2.82104, 0, 0, 0, 9.10524, -11.4811, 0.678249, -15.3948)
+size = Vector3(0.769073, 1, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(21.0699, 0, 0, 0, 2.85154, 0, 0, 0, 9.10524, 6.54775, 1.67064, -15.3886)
+size = Vector3(0.97089, 1.12994, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_jk3vx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34224, -2.59672, -0.44821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34224, 5.72259, -0.44821)

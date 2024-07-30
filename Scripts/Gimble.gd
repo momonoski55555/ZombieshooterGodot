@@ -1,12 +1,13 @@
 extends Node3D
 
-@export_range(0.0 , 1.0 ) var Sens: float
+@export var menu: Menu
+var Sens
 
-
-func _ready():
+func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func  _input(event) -> void:
+func  _input(event: InputEvent) -> void:
+	Sens = menu.sens
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * Sens))
 		$Camera3D.rotation.x += deg_to_rad(-event.relative.y * Sens)
