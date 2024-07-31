@@ -45,6 +45,7 @@ text = "quit
 
 [node name="Settings" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 290.0
 offset_top = 62.0
 offset_right = 499.0

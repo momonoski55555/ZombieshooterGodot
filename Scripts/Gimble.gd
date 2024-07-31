@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var menu: Menu
-var Sens
+var Sens: float
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

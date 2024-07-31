@@ -15,10 +15,6 @@ run/main_scene="res://Prefabs/node_3d.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-PlayerPrefs="*res://player_prefs.gd"
-
 [debug]
 
 gdscript/warnings/untyped_declaration=1
