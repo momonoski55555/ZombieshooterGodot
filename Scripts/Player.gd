@@ -1,9 +1,11 @@
 extends CharacterBody3D
 
-
-const SPEED: float = 5.0
+var Crouching: bool = false
+var SPEED: float = 5.0
 const JUMP_VELOCITY: float = 4.5
 
+
+@export var State_machine:state_machine
 var gravity := 9.5
 
 func _physics_process(delta: float) -> void:
@@ -20,5 +22,13 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	if  Input.is_action_pressed("Ctrl"):
+		s
+	else :
+		State_machine.change_State(State_machine.current_state, "idle")
+	
+	
+	
 	
 	move_and_slide()

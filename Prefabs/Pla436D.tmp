@@ -1,13 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxwixkvlpyofx"]
+[gd_scene load_steps=7 format=3 uid="uid://dxwixkvlpyofx"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_i6k27"]
 [ext_resource type="Script" path="res://Scripts/Gimble.gd" id="2_1n2ny"]
 [ext_resource type="PackedScene" uid="uid://cqx84q3ul0cb1" path="res://menu.tscn" id="3_wah4p"]
 [ext_resource type="Script" path="res://State_machine.gd" id="4_gtomg"]
-[ext_resource type="Script" path="res://Scripts/idle.gd" id="5_cexdx"]
-[ext_resource type="Script" path="res://Scripts/crouching.gd" id="6_w3m06"]
-[ext_resource type="Script" path="res://Scripts/running.gd" id="7_shnfj"]
-[ext_resource type="Script" path="res://Scripts/zooming.gd" id="8_bgsb3"]
+[ext_resource type="Script" path="res://Prefabs/Crouching.gd" id="5_m8mwr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_24d54"]
 
@@ -32,14 +29,5 @@ shape = SubResource("CapsuleShape3D_24d54")
 [node name="State_machine" type="Node" parent="."]
 script = ExtResource("4_gtomg")
 
-[node name="idle" type="Node" parent="State_machine"]
-script = ExtResource("5_cexdx")
-
-[node name="crouching" type="Node" parent="State_machine"]
-script = ExtResource("6_w3m06")
-
-[node name="running" type="Node" parent="State_machine"]
-script = ExtResource("7_shnfj")
-
-[node name="zooming" type="Node" parent="State_machine"]
-script = ExtResource("8_bgsb3")
+[node name="Crouching" type="Node" parent="State_machine"]
+script = ExtResource("5_m8mwr")
