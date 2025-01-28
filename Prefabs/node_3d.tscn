@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cxg3cxn1hwci8"]
 
 [ext_resource type="Texture2D" uid="uid://wlksn2etjgnx" path="res://gridbox Texture/prototype_512x512_grey4.png" id="1_cbr8h"]
-[ext_resource type="PackedScene" uid="uid://dxwixkvlpyofx" path="res://Prefabs/Players.tscn" id="2_jk3vx"]
+[ext_resource type="PackedScene" uid="uid://cig441aksrnd3" path="res://Noclip.tscn" id="2_lawfd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g4iqa"]
 
@@ -49,5 +49,5 @@ size = Vector3(0.769073, 1, 1)
 transform = Transform3D(21.0699, 0, 0, 0, 2.85154, 0, 0, 0, 9.10524, 6.54775, 1.67064, -15.3886)
 size = Vector3(0.97089, 1.12994, 1)
 
-[node name="Player" parent="." instance=ExtResource("2_jk3vx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34224, 5.72259, -0.44821)
+[node name="Node3D" parent="." instance=ExtResource("2_lawfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 18, 3)

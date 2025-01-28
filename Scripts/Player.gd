@@ -5,30 +5,26 @@ var SPEED: float = 5.0
 const JUMP_VELOCITY: float = 4.5
 
 
-@export var State_machine:state_machine
 var gravity := 9.5
+var cam_aligned_vec := Vector3.ZERO
+var noclip := false
+var noclip_speed := 5.0 
+
+
 
 func _physics_process(delta: float) -> void:
+
+
 	
-	if not is_on_floor():
-		velocity.y -= gravity  * delta
+	var input_dir := Input.get_vector("A", "D", "W", "S")
+	var direction: Vector3 = ($Gimble/Camera3D.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity = direction * SPEED
 	else:
-		var input_dir := Input.get_vector("A", "D", "W", "S")
-		var direction: Vector3 = ($Gimble.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if direction:
-			velocity = direction * SPEED
-		else:
-			velocity = lerp(velocity, Vector3.ZERO, delta * 5)
+		velocity = lerp(velocity, Vector3.ZERO, delta * 5)
 	
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	
-	if  Input.is_action_pressed("Ctrl"):
-		s
-	else :
-		State_machine.change_State(State_machine.current_state, "idle")
-	
-	
+	if Input.is_action_pressed("ui_accept") :
+		velocity.y += JUMP_VELOCITY
 	
 	
 	move_and_slide()

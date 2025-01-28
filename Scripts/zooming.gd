@@ -8,4 +8,3 @@ func enter() -> void:
 
 func _update() -> void:
 	print("u r zooming")
-

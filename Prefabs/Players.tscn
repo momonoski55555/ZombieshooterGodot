@@ -11,9 +11,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_24d54"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("State_machine") groups=["Players"]]
+[node name="Player" type="CharacterBody3D" groups=["Players"]]
 script = ExtResource("1_i6k27")
-State_machine = NodePath("State_machine")
 
 [node name="Gimble" type="Node3D" parent="." node_paths=PackedStringArray("menu")]
 transform = Transform3D(1.49964, 0, 0, 0, 1.49964, 0, 0, 0, 1.49964, 0, 0.485237, 0)
@@ -25,6 +24,8 @@ menu = NodePath("Camera3D/CanvasLayer/Control")
 [node name="CanvasLayer" type="CanvasLayer" parent="Gimble/Camera3D"]
 
 [node name="Control" parent="Gimble/Camera3D/CanvasLayer" instance=ExtResource("3_wah4p")]
+
+[node name="viewmodel" type="Node3D" parent="Gimble/Camera3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Players"]]
 shape = SubResource("CapsuleShape3D_24d54")
